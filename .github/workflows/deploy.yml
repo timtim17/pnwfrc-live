@@ -44,4 +44,4 @@ jobs:
         role-to-assume: arn:aws:iam::267253737119:role/GitHub_PNWFRC-Live_ProdDeployRole
         aws-region: 'us-west-2'
     - name: Deploy cdk
-      run: bun run cdk deploy -- --require-approval never --all
+      run: bun run cdk deploy --require-approval never --all
