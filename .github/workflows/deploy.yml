@@ -40,9 +40,9 @@ jobs:
     container: ghcr.io/cargo-lambda/cargo-lambda
     environment: prod
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Cache dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ~/.cargo/bin/
