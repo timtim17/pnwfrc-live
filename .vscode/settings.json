@@ -1,0 +1,8 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./lambda/Cargo.toml"
+    ],
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro"
+    ]
+}

@@ -1,0 +1,44 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    env:
+      FORCE_COLOR: 1
+    steps:
+    - uses: actions/checkout@v4
+    - name: Cache dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    - name: Run tests
+      run: cargo test
+      working-directory: ./lambda
+    - uses: oven-sh/setup-bun@v2
+    - name: Install dependencies
+      run: bun ci
+    - name: Configure aws credentials
+      uses: aws-actions/configure-aws-credentials@main
+      with:
+        role-to-assume: arn:aws:iam::267253737119:role/GitHub_PNWFRC-Live_ProdDeployRole
+        aws-region: 'us-west-2'
+    - name: Deploy cdk
+      run: bun run cdk deploy -- --require-approval never --all

@@ -1,0 +1,20 @@
+[package]
+name = "pnwfrc-live"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.44"
+chrono-tz = "0.10.4"
+either = "1.13.0"
+lambda-web = { version = "0.2.0", features=["rocket05"] }
+once_cell = "1.20.2"
+phf = { version = "0.11.2", features=["macros"] }
+rocket = "0.5.0"
+url = "2.5.2"
+
+[dev-dependencies]
+proptest = "1.0"
+
+[features]
+lambda = []
