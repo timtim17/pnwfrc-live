@@ -1,5 +1,8 @@
 name: Dry Run Build
 
+permissions:
+  id-token: write
+
 on:
   pull_request:
     branches:
