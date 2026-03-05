@@ -14,19 +14,20 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: ghcr.io/cargo-lambda/cargo-lambda
     env:
       FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Cache dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ~/.cargo/bin/
           ~/.cargo/registry/index/
           ~/.cargo/registry/cache/
           ~/.cargo/git/db/
-          target/
+          lambda/target/
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - name: Run tests
       run: cargo test
@@ -39,6 +40,10 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::267253737119:role/GitHub_PNWFRC-Live_ReadOnlyRole
         aws-region: 'us-west-2'
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v6
+      with:
+        node-version: lts/*
     - name: Build
       run: bun run cdk diff
       working-directory: ./lambda

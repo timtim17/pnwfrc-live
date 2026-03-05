@@ -15,9 +15,8 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-    environment: prod
     env:
       FORCE_COLOR: 1
     steps:
@@ -35,6 +34,23 @@ jobs:
     - name: Run tests
       run: cargo test
       working-directory: ./lambda
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    container: ghcr.io/cargo-lambda/cargo-lambda
+    environment: prod
+    steps:
+    - uses: actions/checkout@v6
+    - name: Cache dependencies
+      uses: actions/cache@v5
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          lambda/target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     - uses: oven-sh/setup-bun@v2
     - name: Install dependencies
       run: bun ci
