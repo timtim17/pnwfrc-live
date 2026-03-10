@@ -37,6 +37,30 @@ pub const ALL_STREAMS: phf::Map<&'static str, EventYear> = phf_map! {
                 alt_stream: Some("https://www.youtube.com/watch?v=XWAhpt1cxxU"),
             },
         ],
+        "gpk" => &[
+            EventStream {
+                date: "2026-03-14",
+                stream: "https://www.youtube.com/watch?v=XcQ8EndxcuM",
+                alt_stream: Some("https://www.youtube.com/watch?v=Nr9GNjvD_1w"),
+            },
+            EventStream {
+                date: "2026-03-15",
+                stream: "https://www.youtube.com/watch?v=i1eLOvf3548",
+                alt_stream: Some("https://www.youtube.com/watch?v=UmB9OqU7GBw"),
+            },
+        ],
+        "wil" => &[
+            EventStream {
+                date: "2026-03-14",
+                stream: "https://www.youtube.com/watch?v=tY1iFSJ1U3k",
+                alt_stream: Some("https://www.youtube.com/watch?v=qFn0ZgF3KTo"),
+            },
+            EventStream {
+                date: "2026-03-15",
+                stream: "https://www.youtube.com/watch?v=K3Ftdmvmw1E",
+                alt_stream: Some("https://www.youtube.com/watch?v=XGLQ_8yjcQ0"),
+            },
+        ],
     },
 };
 
