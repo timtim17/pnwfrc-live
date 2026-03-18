@@ -1,5 +1,5 @@
 #[cfg(feature = "lambda")] use lambda_web::{launch_rocket_on_lambda, LambdaError};
-use rocket::{Build, Rocket};
+#[cfg(not(feature = "lambda"))] use rocket::{Build, Rocket};
 
 use pnwfrc_live::build_rocket;
 
