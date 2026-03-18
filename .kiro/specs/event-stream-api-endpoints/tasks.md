@@ -181,26 +181,26 @@ This implementation adds 8 new route handlers to the Rust Lambda API for day-bas
     - Verify fallback to primary stream (not 404)
 
 - [ ] 14. Implement property tests for case insensitivity
-  - [~] 14.1 Write property test for case-insensitive alt suffix
+  - [ ] 14.1 Write property test for case-insensitive alt suffix
     - **Property 9: Case-Insensitive Alt Suffix**
     - **Validates: Requirements 3.4**
     - Generate various casings of "alt" (ALT, Alt, aLt, etc.)
     - Verify all produce same redirect
   
-  - [~] 14.2 Write property test for case-insensitive event codes
+  - [ ] 14.2 Write property test for case-insensitive event codes
     - **Property 10: Case-Insensitive Event Codes**
     - **Validates: Requirements 5.1**
     - Generate various casings of valid event codes
     - Verify all resolve to same event and redirect
 
-- [~] 15. Implement property test for current day calculation
+- [ ] 15. Implement property test for current day calculation
   - **Property 12: Current Day Calculation**
   - **Validates: Requirements 1.4**
   - Generate events with multiple streams at various dates
   - Verify most recent non-future date is selected based on Pacific timezone
   - _Requirements: 1.4_
 
-- [~] 16. Final checkpoint - Verify complete implementation
+- [ ] 16. Final checkpoint - Verify complete implementation
   - Run all unit tests and property tests
   - Verify all 8 route handlers work correctly
   - Ensure all tests pass, ask the user if questions arise.
