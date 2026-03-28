@@ -93,19 +93,19 @@ pub const ALL_STREAMS: phf::Map<&'static str, EventYear> = phf_map! {
             },
             EventStream {
                 date: "2026-03-28",
-                stream: "https://www.youtube.com/watch?v=GJj5jbvS8cU",
+                stream: "https://www.twitch.tv/firstinspires15",
                 alt_stream: Some("https://www.twitch.tv/firstinspires14"),
             },
         ],
         "aub" => &[
             EventStream {
                 date: "2026-03-28",
-                stream: "https://www.youtube.com/watch?v=B5iWzrntjFU",
+                stream: "https://www.twitch.tv/firstinspires16",
                 alt_stream: Some("https://www.twitch.tv/firstinspires17"),
             },
             EventStream {
                 date: "2026-03-29",
-                stream: "https://www.youtube.com/watch?v=ksNZtB3vApg",
+                stream: "https://www.twitch.tv/firstinspires16",
                 alt_stream: Some("https://www.twitch.tv/firstinspires17"),
             },
         ],
