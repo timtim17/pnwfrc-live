@@ -113,17 +113,17 @@ pub const ALL_STREAMS: phf::Map<&'static str, EventYear> = phf_map! {
             EventStream {
                 date: "2026-04-09",
                 stream: "https://www.youtube.com/watch?v=lKvB-lprL5k",
-                alt_stream: None,
+                alt_stream: Some("https://www.youtube.com/watch?v=IfLCEM8pqIw"),
             },
             EventStream {
                 date: "2026-04-10",
                 stream: "https://www.youtube.com/watch?v=BsaAVKgf9Qs",
-                alt_stream: None,
+                alt_stream: Some("https://www.youtube.com/watch?v=qUzKUS0t24c"),
             },
             EventStream {
                 date: "2026-04-11",
                 stream: "https://www.youtube.com/watch?v=s3X4yqNg-88",
-                alt_stream: None,
+                alt_stream: Some("https://www.youtube.com/watch?v=5cvdQIXj9nc"),
             },
         ],
     },
