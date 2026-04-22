@@ -126,6 +126,13 @@ pub const ALL_STREAMS: phf::Map<&'static str, EventYear> = phf_map! {
                 alt_stream: Some("https://www.youtube.com/watch?v=5cvdQIXj9nc"),
             },
         ],
+        "cmp" => &[
+            EventStream {
+                date: "2026-04-29",
+                stream: "https://www.firstinspires.org/programs/first-championship/watch#:~:text=FIRST%C2%AE%20Tech%20Challenge",
+                alt_stream: None,
+            },
+        ],
     },
 };
 
