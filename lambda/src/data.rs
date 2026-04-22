@@ -129,7 +129,7 @@ pub const ALL_STREAMS: phf::Map<&'static str, EventYear> = phf_map! {
         "cmp" => &[
             EventStream {
                 date: "2026-04-29",
-                stream: "https://www.firstinspires.org/programs/first-championship/watch#:~:text=FIRST%C2%AE%20Tech%20Challenge",
+                stream: "https://www.firstinspires.org/programs/first-championship/watch",
                 alt_stream: None,
             },
         ],
